@@ -32,14 +32,15 @@ function update(snake, food, game) {
     }
 }
 
-
 function gameLoop(snake, food, game) {
     if (game.gameOver) {
         showGameOver();
+        canvas.addEventListener('click', (event) => handleRestart(event, snake, food, game));
         return;
     }
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBorder();
     drawSnake(snake);
     drawFood(food);
     updateScore(game.score);
@@ -47,4 +48,17 @@ function gameLoop(snake, food, game) {
     update(snake, food, game);
 
     setTimeout(() => gameLoop(snake, food, game), 100);
+}
+
+function handleRestart(event, snake, food, game) {
+    const rect = canvas.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    if (x >= 160 && x <= 240 && y >= 250 && y <= 280) {
+        snake.reset();
+        food.newPosition();
+        game.reset();
+        gameLoop(snake, food, game);
+    }
 }

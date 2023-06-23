@@ -1,1 +1,14 @@
-python -m http.server
+npm init -y
+npm install express
+
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.use(express.static('.'));
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
+
+node server.js

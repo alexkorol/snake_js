@@ -47,6 +47,18 @@ To run the SnakeJS game locally, follow these steps:
 
 Feel free to customize the game by modifying the code or adding new features!
 
+
+## Latest Updates
+
+New functions and modifications:
+
+- drawBorder(): Draws a black border around the game space
+- drawRestartButton(): Draws a restart button on the canvas after a game over
+- handleRestart(): Handles the restart button click event
+- Modify showGameOver(): Add a call to drawRestartButton()
+- Modify gameLoop(): Add a check for game restart
+- Modify index.html: Change the page background to black
+
 ## Credits
 
 The SnakeJS game is inspired by the classic snake game and is implemented using JavaScript and HTML canvas.

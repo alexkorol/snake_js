@@ -25,8 +25,14 @@ class Snake {
     grow() {
         this.growAmount++;
     }
-}
 
+    reset() {
+        this.position = { x: 200, y: 200 };
+        this.direction = { x: 0, y: 0 };
+        this.body = [{ x: 200, y: 200 }];
+        this.growAmount = 0;
+    }
+}
 
 class Food {
     constructor() {
@@ -51,5 +57,10 @@ class Game {
 
     setGameOver() {
         this.gameOver = true;
+    }
+
+    reset() {
+        this.score = 0;
+        this.gameOver = false;
     }
 }

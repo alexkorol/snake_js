@@ -22,4 +22,19 @@ function showGameOver() {
     ctx.fillStyle = 'black';
     ctx.font = '24px Arial';
     ctx.fillText('Game Over', 140, 200);
+    drawRestartButton();
+}
+
+function drawBorder() {
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(0, 0, canvas.width, canvas.height);
+}
+
+function drawRestartButton() {
+    ctx.fillStyle = 'white';
+    ctx.fillRect(160, 250, 80, 30);
+    ctx.fillStyle = 'black';
+    ctx.font = '16px Arial';
+    ctx.fillText('Restart', 170, 270);
 }
